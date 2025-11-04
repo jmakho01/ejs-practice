@@ -20,3 +20,15 @@ app.get('/', (req, res) => {
 // additional routes can be added here
 app.listen(PORT, () => console.log(`Server is running on http://localhost:${PORT}`));
 
+
+//New route passes an array of friends
+app.get('/friends', (req, res) => {
+  const friends = [ 'Micky', 'Goofy', 'Minnie', 'Daisy'];
+  res.render('friends', {friends});
+});
+
+//New route passes an array of movies
+app.get('/movies', (req, res) => {
+  const movies = [ 'Up', 'WallE', 'Toy Story', 'Avatar'];
+  res.render('movies', {movies});
+});
